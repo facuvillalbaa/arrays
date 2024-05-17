@@ -11,6 +11,9 @@ import java.util.ArrayList;
 
 public class ArrayUtils
 {
+    public static void main(float[] args) {
+        ArrayUtils utils = new ArrayUtils();
+    }
     
     /**
      * Comprueba si un elemento (entero) pertenece a un arreglo.
@@ -35,7 +38,8 @@ public class ArrayUtils
      */
     public int suma(int[] arreglo) {
         //TODO: Completar la implementación, reemplazando la línea siguiente
-        if (arreglo == null || arreglo.length == 0) throw new IllegalArgumentException("Arreglo invalido");
+        if (arreglo == null || arreglo.length == 0) 
+            throw new IllegalArgumentException("Arreglo Invalido");
         int i = 0;
         int elem = 0;
             while (i <= arreglo.length){
@@ -51,7 +55,20 @@ public class ArrayUtils
      */
     public float minimo(float[] arreglo) {
         //TODO: Completar la implementación, reemplazando la línea siguiente
-        return 0;
+        if (arreglo == null)
+            throw new IllegalArgumentException("Arreglo Invalido");
+        
+        int i = 0;
+        float min = 0;
+        for (float num : arreglo) {
+            if(i <= arreglo.length){
+                min = arreglo[i];
+                i++;
+                if(min > arreglo[i])
+                    min = arreglo[i];
+            }
+        }
+        return min;
     }
     
     /**
